@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="doordashRestaurant"
+                type="com.doordash.anroid.model.DoordashRestaurant"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="1dp"
+            android:paddingEnd="@dimen/card_padding"
+            android:paddingStart="@dimen/card_padding"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="@dimen/card_height">
+
+        <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/card_height"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/image_bottom_margin"
+                app:imageUrl="@{doordashRestaurant.restaurantThumbnailUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/backgrounds/scenic"/>
+
+        <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/name_margin_start"
+                android:singleLine="true"
+                android:paddingBottom="4dp"
+                android:textSize="@dimen/name_text_size"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:textColor="@android:color/black"
+                android:text="@{doordashRestaurant.name}"
+                app:layout_constraintVertical_bias="0.30"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="name, name, name, name, name, name name name name name name name"/>
+
+        <TextView
+                android:id="@+id/typeOfFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/typeOfFood_margin_start"
+                android:singleLine="true"
+                android:textSize="@dimen/typeOfFood_text_size"
+                android:ellipsize="end"
+                android:textStyle="italic"
+                android:text="@{doordashRestaurant.typeOfFood}"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:text="description description description description description description description description"/>
+
+        <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/status_text_size"
+                android:paddingEnd="@dimen/status_padding_end"
+                android:ellipsize="end"
+                android:maxLength="9"
+                android:singleLine="true"
+                android:textStyle="italic"
+                android:text="@{doordashRestaurant.status}"
+                app:layout_constraintVertical_bias="0.8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Status Status "/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

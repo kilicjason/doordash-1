@@ -1,0 +1,28 @@
+buildscript {
+    ext.kotlin_version = '1.3.10'
+    ext.dagger_version = '2.19'
+    ext.glide_version = '4.8.0'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+    configurations.all {
+        resolutionStrategy.force "com.android.tools.build.jetifier:jetifier-core:1.0.0-beta02"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

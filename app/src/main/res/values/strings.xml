@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Doordash Search</string>
+    <string name="discover">Discover</string>
+    <string name="click_search_icon_and_start_searching">Welcome, Tap on me!</string>
+    <string name="no_data_found">No Data Found!</string>
+    <string name="details">Address Of The Restaurant is:  </string>
+    <string name="ok">Ok</string>
+    <string name="nothing_to_show">Nothing to show here.Their address is not available.</string>
+    <string name="mark_as_favorite_location">Mark As Favorite Location</string>
+    <string name="read_me">This feature is not implemented yet!</string>
+</resources>
